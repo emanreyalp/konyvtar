@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Cím</th>
+      <th>Szerzők</th>
+      <th>ISBN</th>
+      <th>helye</th>
+      <th>stílus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book|  %>
+    <tr>
+      <td><% book.title %></td>
+      <td><% book.authors %></td>
+      <td><% book.ISBN %></td>
+      <td><% book.location %></td>
+      <td><% book.style %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table
