@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-resource :books
+  resources :books
 
+  root to: redirect('/books')
 end
