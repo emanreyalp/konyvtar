@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328230920) do
+ActiveRecord::Schema.define(version: 20180405213028) do
 
   create_table "books", force: :cascade do |t|
     t.string  "title",    limit: 255
@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 20180328230920) do
     t.integer "style",    limit: 4
     t.string  "isbn",     limit: 255
     t.string  "author",   limit: 255
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string  "name",      limit: 255
+    t.boolean "is_active"
   end
 
 end
