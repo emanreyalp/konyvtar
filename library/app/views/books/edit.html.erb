@@ -1,2 +1,33 @@
-könyv szerkesztése
-form_for 
+<div class="uk-container-center uk-panel uk-panel-box">
+  <%= form_tag book_path(@book), method: :put, html: { class: 'uk-form' } do %>
+    <div class="uk-text-center">
+      <div class="uk-grid">
+        <div class="uk-width-1-1">
+          <div class="uk-form-row">
+            <%= label_tag :title, 'Cím:' %>
+            <%= text_field_tag :title, @book.title %>
+          </div>
+          <div class="uk-form-row">
+            <%= label_tag :author, 'Szerzők:' %>
+            <%= text_field_tag :author, @book.author %>
+          </div>
+          <div class="uk-form-row">
+            <%= label_tag :isbn, 'ISBN:' %>
+            <%= text_field_tag :isbn, @book.isbn %>
+          </div>
+          <div class="uk-form-row">
+            <%= label_tag :location, 'helye' %>
+            <%= text_field_tag :location, @book.location %>
+          </div>
+          <div class="uk-form-row">
+            <%= label_tag :style, 'Stílus' %>
+            <%= select_tag :style, options_for_select(Rails.configuration.x.styles.invert, @book.style ) %>
+          </div>
+          <div class="uk-form-row">
+            <%= submit_tag 'Mentés', class: 'uk-button'  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
