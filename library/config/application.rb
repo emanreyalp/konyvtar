@@ -22,5 +22,14 @@ module Library
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.x.styles = {
+      0 => 'Akció',
+      1 => 'Dráma',
+      2 => 'Tudományos',
+      3 => '-',
+      4 => 'Pszichológia',
+      5 => 'Rossz',
+    }
   end
 end
