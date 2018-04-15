@@ -1,0 +1,21 @@
+<h1> A /<%= @location.name %>/ hely adatai </h1>
+
+<div class="uk-container-center uk-panel uk-panel-box">
+  <div class="uk-text-center">
+    <div class="uk-grid">
+      <div class="uk-width-1-1">
+        <div class="uk-form-row">
+          <%= label_tag :name, 'Név:' %>
+          <%= label_tag :name, @location.name %>
+        </div>
+        <div class="uk-form-row">
+          <%= label_tag :is_active, 'Aktív?:' %>
+          <%= check_box_tag :is_active, nil, @location.is_active, disabled: true %>
+        </div>
+        <div class="uk-form-row">
+          <%= link_to 'Szerkesztés', edit_location_path(@location), class: 'uk-button'  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

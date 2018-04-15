@@ -1,0 +1,21 @@
+<div class="uk-container-center uk-panel uk-panel-box">
+  <%= form_tag location_path(@location), method: :put, html: { class: 'uk-form' } do %>
+    <div class="uk-text-center">
+      <div class="uk-grid">
+        <div class="uk-width-1-1">
+          <div class="uk-form-row">
+            <%= label_tag :name, 'Cím:' %>
+            <%= text_field_tag :name, @location.name %>
+          </div>
+          <div class="uk-form-row">
+            <%= label_tag :is_active, 'Aktív:' %>
+            <%= check_box_tag :is_active, nil, @location.is_active %>
+          </div>
+          <div class="uk-form-row">
+            <%= submit_tag 'Mentés', class: 'uk-button'  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

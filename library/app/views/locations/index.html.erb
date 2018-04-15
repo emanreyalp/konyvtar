@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Aktív?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @locations.each do |location|  %>
+    <tr>
+      <td><%= link_to location.name, location_path(location) %></td>
+      <td><%= location.is_active %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Új', new_location_path, class: 'uk-button'  %>
