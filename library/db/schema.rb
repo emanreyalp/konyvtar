@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405213028) do
+ActiveRecord::Schema.define(version: 20180418213128) do
 
   create_table "books", force: :cascade do |t|
     t.string  "title",    limit: 255
-    t.string  "location", limit: 255
+    t.integer "location", limit: 4
     t.integer "style",    limit: 4
     t.string  "isbn",     limit: 255
     t.string  "author",   limit: 255

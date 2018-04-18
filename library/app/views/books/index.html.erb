@@ -14,7 +14,7 @@
       <td><%= link_to book.title, book_path(book) %></td>
       <td><%= book.author %></td>
       <td><%= book.isbn %></td>
-      <td><%= book.location %></td>
+      <td><%= link_to book.location.name, location_path(book.location) %></td>
       <td><%= Rails.configuration.x.styles[book.style] %></td>
     </tr>
     <% end %>

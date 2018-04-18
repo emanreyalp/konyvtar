@@ -13,8 +13,10 @@ class BooksController < ApplicationController
 
   def update
     book = Book.find(params[:id])
-    update_params = params.permit :title, :author, :isbn, :location
+    update_params = params.permit :title, :author, :isbn
     book.update update_params
+
+    book.location = Location.find(params[:location])
     book.style = params[:style]
     book.save!
 
@@ -23,8 +25,10 @@ class BooksController < ApplicationController
 
   def create
     book = Book.new
-    update_params = params.permit :title, :author, :isbn, :location
+    update_params = params.permit :title, :author, :isbn
     book.update update_params
+
+    book.location = Location.find(params[:location])
     book.style = params[:style]
     book.save!
 
