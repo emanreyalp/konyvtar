@@ -17,7 +17,7 @@
           </div>
           <div class="uk-form-row">
             <%= label_tag :location, 'helye' %>
-            <%= text_field_tag :location, @book.location %>
+            <%= select_tag :location, options_for_select( Location.all.collect {|l| [l.name, l.id]} ) %>
           </div>
           <div class="uk-form-row">
             <%= label_tag :style, 'Stílus' %>
